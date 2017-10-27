@@ -6,7 +6,16 @@ const notes = require('./notes.js');
 
 var argv = yargs
 	.command('add', 'Add a new note', {
-
+		title: {
+			describe: 'Title of note',
+			demand: true,
+			alias: 't'
+		},
+		body: {
+			describe: 'The body of the note',
+			demand: true,
+			alias: 'b'
+		}
 	})
 	.help()
 	.argv;
