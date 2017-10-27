@@ -16,8 +16,10 @@ var addNote = (title, body) => {
 
 	}
 
-	notes.push(note);
-	fs.writeFileSync('notes-data.json', JSON.stringify(notes));
+	var duplicateNotes = notes.filter((note) => {
+		return note.title === title;
+	});
+
 };
 
 var getAll = () => {
